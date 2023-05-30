@@ -12,18 +12,20 @@ import java.util.ArrayList;
  * created : 5/30/2023-10:55 AM
  **/
 
-public class ClientManage {
+public class ClientManage extends Thread {
     private ArrayList<ClientManage> clients;
     private Socket socket;
     public BufferedReader bufferedReader;
     public PrintWriter printWriter;
 
     public ClientManage(Socket socket, ArrayList<ClientManage> clients) throws IOException {
-        this.clients=clients;
-        this.socket=socket;
+        this.clients = clients;
+        this.socket = socket;
         this.bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         this.printWriter = new PrintWriter(socket.getOutputStream(), true);
     }
+
+    @Override
     public void run() {
         try {
             String msg;

@@ -3,6 +3,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import lk.playTech.liveChat.controller.ClientManage;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -21,17 +22,24 @@ public class ServerAppInitializer extends Application {
         launch(args);
     }
 
+    private static ArrayList<ClientManage> clients = new ArrayList<ClientManage>();
     @Override
-    public void start(Stage primaryStage) throws IOException {
-        URL resource = getClass().getResource("/lk/playTech/liveChat/view/ServerForm.fxml");
-        Parent load = FXMLLoader.load(resource);
-        Scene scene = new Scene(load);
-        primaryStage.setTitle("Live - Chat");
-
-        primaryStage.setResizable(false);
-        primaryStage.setScene(scene);
-        primaryStage.centerOnScreen();
-
-        primaryStage.show();
+    public void start(Stage primaryStage) {
+        ServerSocket serverSocket;
+        Socket socket;
+        try {
+            serverSocket = new ServerSocket(3000);
+            while (true){
+                System.out.println("Waiting");
+                socket = serverSocket.accept();
+                System.out.println("Connected");
+                System.out.println("-------------------------------------");
+                ClientManage thread = new ClientManage(socket,clients);
+                clients.add(thread);
+                thread.start();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
