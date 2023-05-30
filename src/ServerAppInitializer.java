@@ -20,6 +20,7 @@ public class ServerAppInitializer extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         URL resource = getClass().getResource("/lk/playTech/liveChat/view/ServerForm.fxml");

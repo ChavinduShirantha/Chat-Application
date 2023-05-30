@@ -3,7 +3,6 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -28,6 +27,5 @@
             <VBox fx:id="vBoxPane1" prefHeight="73.0" prefWidth="504.0" />
          </content>
       </ScrollPane>
-      <TextArea fx:id="ClientTextArea" layoutX="41.0" layoutY="57.0" prefHeight="271.0" prefWidth="514.0" />
    </children>
 </AnchorPane>

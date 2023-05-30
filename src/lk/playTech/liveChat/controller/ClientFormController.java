@@ -1,17 +1,25 @@
 package lk.playTech.liveChat.controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.TextFlow;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 
 import static lk.playTech.liveChat.controller.LoginFormController.userName;
 
@@ -20,7 +28,7 @@ import static lk.playTech.liveChat.controller.LoginFormController.userName;
  * created : 5/29/2023-1:56 PM
  **/
 
-public class ClientFormController extends Thread{
+public class ClientFormController extends Thread {
     @FXML
     private TextArea ClientTextArea;
     @FXML
@@ -34,7 +42,8 @@ public class ClientFormController extends Thread{
     Socket socket;
     DataInputStream dataInputStream;
     DataOutputStream dataOutputStream;
-    String message="";
+    String message = "";
+
     public void initialize() {
         lblUName.setText(userName);
         new Thread(() -> {
