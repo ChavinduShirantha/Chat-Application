@@ -71,16 +71,6 @@ public class ClientFormController extends Thread {
         }).start();
     }
 
-    public void btnSendOnAction(ActionEvent actionEvent) {
-        try {
-            dataOutputStream.writeUTF(txtClient.getText().trim());
-            dataOutputStream.flush();
-            txtClient.clear();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     public void imgGalleryOnAction(MouseEvent mouseEvent) {
     }
 
@@ -88,5 +78,12 @@ public class ClientFormController extends Thread {
     }
 
     public void imgSendOnAction(MouseEvent mouseEvent) {
+        try {
+            dataOutputStream.writeUTF(txtClient.getText().trim());
+            dataOutputStream.flush();
+            txtClient.clear();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

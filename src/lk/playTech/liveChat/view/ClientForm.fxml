@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
@@ -33,16 +34,25 @@
          <image>
             <Image url="@assets/img/gallery.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <ImageView fx:id="imgEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="490.0" layoutY="350.0" onMouseClicked="#imgEmojiOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/img/emoji.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
-      <ImageView fx:id="imgSend" fitHeight="60.0" fitWidth="30.0" layoutX="460.0" layoutY="350.0" onMouseClicked="#imgSendOnAction" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgSend" cache="true" fitHeight="60.0" fitWidth="30.0" layoutX="460.0" layoutY="350.0" onMouseClicked="#imgSendOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/img/send.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
    </children>
 </AnchorPane>
