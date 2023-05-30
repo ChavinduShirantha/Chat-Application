@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.playTech.liveChat.controller.ServerFormController">
+   <children>
+      <TextField fx:id="txtServer" layoutX="46.0" layoutY="348.0" prefHeight="26.0" prefWidth="406.0" />
+      <JFXButton fx:id="btnSend" layoutX="510.0" layoutY="345.0" onAction="#btnSendOnAction" text="Send" />
+      <TextArea fx:id="ServerTextField" layoutX="46.0" layoutY="65.0" prefHeight="262.0" prefWidth="499.0" />
+      <Label layoutX="46.0" layoutY="22.0" text="Server : ">
+         <font>
+            <Font name="Cambria Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

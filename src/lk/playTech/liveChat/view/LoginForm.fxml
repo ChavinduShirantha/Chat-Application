@@ -24,7 +24,6 @@
             <Font name="Cambria Bold" size="14.0" />
          </font>
          <stylesheets>
-            <URL value="@../../../../../INP%20CourseWork/Live-Chat/Live-Chat/src/lk/PlayTechPvtLtd/Live_Chat/view/assets/style/styles.css" />
             <URL value="@assets/styles/styles.css" />
          </stylesheets>
       </JFXButton>
