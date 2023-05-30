@@ -50,25 +50,27 @@ public class ClientFormController extends Thread {
     DataInputStream dataInputStream;
     DataOutputStream dataOutputStream;
     String message = "";
+    PrintWriter printWriter;
+    private BufferedReader bufferedReader;
 
     public void initialize() {
         lblUName.setText(userName);
-        new Thread(() -> {
-            try {
-                socket = new Socket("localhost", 3000);
-                dataInputStream = new DataInputStream(socket.getInputStream());
-                dataOutputStream = new DataOutputStream(socket.getOutputStream());
-                while (!message.equals("finish")) {
-                    message = dataInputStream.readUTF();
-                    ClientTextArea.appendText("\nServer : " + message);
-                }
-                dataInputStream.close();
-                dataOutputStream.close();
-                socket.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }).start();
+        try {
+            socket = new Socket("localhost", 3000);
+            System.out.println("Connect With Server");
+            System.out.println(userName + " Enter the Chat");
+            System.out.println("____________________");
+            dataInputStream = new DataInputStream(socket.getInputStream());
+            dataOutputStream = new DataOutputStream(socket.getOutputStream());
+            InputStreamReader inputStreamReader = new InputStreamReader(dataInputStream);
+            bufferedReader = new BufferedReader(inputStreamReader);
+            printWriter = new PrintWriter(dataOutputStream);
+
+            this.start();
+
+        } catch (IOException e) {
+
+        }
     }
 
     public void imgGalleryOnAction(MouseEvent mouseEvent) {
@@ -78,12 +80,23 @@ public class ClientFormController extends Thread {
     }
 
     public void imgSendOnAction(MouseEvent mouseEvent) {
-        try {
-            dataOutputStream.writeUTF(txtClient.getText().trim());
-            dataOutputStream.flush();
-            txtClient.clear();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        String msg = txtClient.getText();
+        printWriter.println(userName + " : " + msg);
+        HBox hBox = new HBox();
+        hBox.setAlignment(Pos.CENTER_RIGHT);
+        hBox.setPadding(new Insets(5, 5, 5, 10));
+        Text text = new Text("Me : " + msg);
+        text.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
+        TextFlow textFlow = new TextFlow(text);
+        textFlow.setStyle("-fx-background-color: rgb(12,51,108);" + "-fx-background-radius: 15px");
+        textFlow.setPadding(new Insets(5, 10, 5, 10));
+        text.setFill(Color.rgb(225, 225, 225));
+        hBox.getChildren().add(textFlow);
+        vBoxPane1.getChildren().add(hBox);
+        printWriter.flush();
+        txtClient.setText("");
+        if (msg.equalsIgnoreCase("logout")) {
+            System.exit(0);
         }
     }
 }
