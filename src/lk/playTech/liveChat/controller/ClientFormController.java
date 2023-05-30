@@ -11,6 +11,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.layout.HBox;
@@ -29,6 +30,12 @@ import static lk.playTech.liveChat.controller.LoginFormController.userName;
  **/
 
 public class ClientFormController extends Thread {
+    @FXML
+    private ImageView imgSend;
+    @FXML
+    private ImageView imgEmoji;
+    @FXML
+    private ImageView imgGallery;
     @FXML
     private TextArea ClientTextArea;
     @FXML
@@ -72,5 +79,14 @@ public class ClientFormController extends Thread {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void imgGalleryOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void imgEmojiOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void imgSendOnAction(MouseEvent mouseEvent) {
     }
 }

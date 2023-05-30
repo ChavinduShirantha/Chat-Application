@@ -4,14 +4,16 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.playTech.liveChat.controller.ClientFormController">
    <children>
-      <TextField fx:id="txtClient" layoutX="44.0" layoutY="351.0" prefHeight="26.0" prefWidth="406.0" />
-      <JFXButton fx:id="btnSend" layoutX="513.0" layoutY="352.0" onAction="#btnSendOnAction" text="Send" />
+      <TextField fx:id="txtClient" layoutX="43.0" layoutY="351.0" prefHeight="26.0" prefWidth="406.0" />
+      <JFXButton fx:id="btnSend" layoutX="483.0" layoutY="17.0" onAction="#btnSendOnAction" text="Send" />
       <Label fx:id="lblUName" layoutX="109.0" layoutY="19.0" prefHeight="18.0" prefWidth="104.0">
          <font>
             <Font name="Cambria Bold" size="18.0" />
@@ -27,5 +29,20 @@
             <VBox fx:id="vBoxPane1" prefHeight="73.0" prefWidth="504.0" />
          </content>
       </ScrollPane>
+      <ImageView fx:id="imgGallery" fitHeight="60.0" fitWidth="30.0" layoutX="525.0" layoutY="350.0" onMouseClicked="#imgGalleryOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/img/gallery.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="490.0" layoutY="350.0" onMouseClicked="#imgEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/img/emoji.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgSend" fitHeight="60.0" fitWidth="30.0" layoutX="460.0" layoutY="350.0" onMouseClicked="#imgSendOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/img/send.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
