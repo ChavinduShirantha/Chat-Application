@@ -2,14 +2,12 @@ package lk.playTech.liveChat.controller;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -20,7 +18,7 @@ import javafx.scene.text.TextFlow;
 
 import java.io.*;
 import java.net.Socket;
-import java.nio.charset.StandardCharsets;
+
 
 import static lk.playTech.liveChat.controller.LoginFormController.userName;
 
@@ -69,7 +67,53 @@ public class ClientFormController extends Thread {
             this.start();
 
         } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
+    public void run() {
+        try {
+            while (true) {
+                String msg = bufferedReader.readLine();
+                System.out.println("Message : " + msg);
+                String[] tokens = msg.split(" ");
+                String cmd = tokens[0];
+                System.out.println("cmd : " + cmd);
+                StringBuilder fullMsg = new StringBuilder();
+                for (int i = 1; i < tokens.length; i++) {
+                    fullMsg.append(tokens[i]);
+                }
+                System.out.println("fullMsg : " + fullMsg);
+                System.out.println();
+                if (cmd.equalsIgnoreCase(userName + " : ")) {
+                    continue;
+                } else if (fullMsg.toString().equalsIgnoreCase("logOut")) {
+                    break;
+                }
+
+                Platform.runLater(() -> {
+                    HBox hBox = new HBox();
+
+                    hBox.setAlignment(Pos.CENTER_LEFT);
+                    hBox.setPadding(new Insets(5, 10, 5, 5));
+                    Text text = new Text(msg);
+                    text.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
+                    TextFlow textFlow = new TextFlow(text);
+                    textFlow.setStyle("-fx-background-color: rgb(163,52,250);" + "-fx-background-radius: 15px");
+                    textFlow.setPadding(new Insets(5, 0, 5, 5));
+                    text.setFill(Color.rgb(225, 225, 225));
+                    hBox.getChildren().add(textFlow);
+                    vBoxPane1.getChildren().add(hBox);
+
+                });
+
+            }
+
+            bufferedReader.close();
+            printWriter.close();
+            socket.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -94,7 +138,7 @@ public class ClientFormController extends Thread {
         hBox.getChildren().add(textFlow);
         vBoxPane1.getChildren().add(hBox);
         printWriter.flush();
-        txtClient.setText("");
+        txtClient.clear();
         if (msg.equalsIgnoreCase("logout")) {
             System.exit(0);
         }
