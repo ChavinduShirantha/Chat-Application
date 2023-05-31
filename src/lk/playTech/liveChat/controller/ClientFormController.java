@@ -26,6 +26,7 @@ import java.io.*;
 import java.net.MalformedURLException;
 import java.net.Socket;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 
 import static lk.playTech.liveChat.controller.LoginFormController.userName;
@@ -69,7 +70,7 @@ public class ClientFormController extends Thread {
 
             dataInputStream = new DataInputStream(socket.getInputStream());
             dataOutputStream = new DataOutputStream(socket.getOutputStream());
-            InputStreamReader inputStreamReader = new InputStreamReader(dataInputStream);
+            InputStreamReader inputStreamReader = new InputStreamReader(dataInputStream, StandardCharsets.UTF_8);
             bufferedReader = new BufferedReader(inputStreamReader);
             printWriter = new PrintWriter(dataOutputStream);
 
@@ -96,12 +97,22 @@ public class ClientFormController extends Thread {
             HBox hBox = new HBox();
             hBox.setAlignment(Pos.CENTER_RIGHT);
             hBox.setPadding(new Insets(5, 10, 5, 10));
+
+            Text text = new Text("Me : " + " ");
+            text.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
             ImageView imageView = new ImageView();
             Image image = new Image(String.valueOf(url));
             imageView.setImage(image);
-            imageView.setFitWidth(75);
-            imageView.setFitHeight(75);
-            VBox vBox = new VBox(imageView);
+            imageView.setFitWidth(100);
+            imageView.setFitHeight(100);
+            TextFlow textFlow = new TextFlow(text, imageView);
+            textFlow.setStyle("-fx-background-color: rgb(12,51,108);" + "-fx-background-radius: 15px");
+            text.setFill(Color.rgb(225, 225, 225));
+            textFlow.setPadding(new Insets(5, 10, 5, 10));
+            textFlow.setMaxWidth(150);
+            hBox.getChildren().add(textFlow);
+
+            VBox vBox = new VBox(textFlow);
             vBox.setAlignment(Pos.CENTER_RIGHT);
             vBox.setPadding(new Insets(5, 10, 5, 5));
             vBoxPane1.getChildren().add(vBox);
@@ -140,12 +151,13 @@ public class ClientFormController extends Thread {
                         hBox.setAlignment(Pos.TOP_LEFT);
                         hBox.setPadding(new Insets(5, 10, 5, 5));
                         Text text = new Text(cmd + " ");
-                        text.setStyle("-fx-font-size: 15px");
+                        text.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
                         ImageView imageView = new ImageView();
                         Image image = new Image(String.valueOf(fullMsg));
                         imageView.setImage(image);
                         imageView.setFitWidth(100);
                         imageView.setFitHeight(100);
+                        text.setFill(Color.rgb(225, 225, 225));
                         TextFlow textFlow = new TextFlow(text, imageView);
                         textFlow.setStyle("-fx-background-color: rgb(139,0,139);" + "-fx-background-radius: 15px");
                         textFlow.setPadding(new Insets(5, 10, 5, 10));
