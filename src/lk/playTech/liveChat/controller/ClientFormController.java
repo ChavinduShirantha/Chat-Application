@@ -5,9 +5,11 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -17,9 +19,13 @@ import javafx.scene.text.Text;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextFlow;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.io.*;
+import java.net.MalformedURLException;
 import java.net.Socket;
+import java.net.URL;
 
 
 import static lk.playTech.liveChat.controller.LoginFormController.userName;
@@ -75,7 +81,32 @@ public class ClientFormController extends Thread {
     }
 
 
-    public void imgGalleryOnAction(MouseEvent mouseEvent) {
+    public void imgGalleryOnAction(MouseEvent mouseEvent) throws MalformedURLException {
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Choose a Image");
+        File file = fileChooser.showOpenDialog(stage);
+        if (file != null) {
+            printWriter.println(userName + ": " + file.toURI().toURL());
+        }
+        if (file != null) {
+            System.out.println("File Was Selected");
+            URL url = file.toURI().toURL();
+            System.out.println(url);
+            HBox hBox = new HBox();
+            hBox.setAlignment(Pos.CENTER_RIGHT);
+            hBox.setPadding(new Insets(5, 10, 5, 10));
+            ImageView imageView = new ImageView();
+            Image image = new Image(String.valueOf(url));
+            imageView.setImage(image);
+            imageView.setFitWidth(75);
+            imageView.setFitHeight(75);
+            VBox vBox = new VBox(imageView);
+            vBox.setAlignment(Pos.CENTER_RIGHT);
+            vBox.setPadding(new Insets(5, 10, 5, 5));
+            vBoxPane1.getChildren().add(vBox);
+            printWriter.flush();
+        }
 
     }
 
@@ -104,17 +135,35 @@ public class ClientFormController extends Thread {
 
                 Platform.runLater(() -> {
                     HBox hBox = new HBox();
-                    hBox.setAlignment(Pos.CENTER_LEFT);
-                    hBox.setPadding(new Insets(5, 10, 5, 5));
-                    Text text = new Text(msg);
-                    text.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
-                    TextFlow textFlow = new TextFlow(text);
-                    textFlow.setStyle("-fx-background-color: rgb(139,0,139);" + "-fx-background-radius: 15px");
-                    textFlow.setPadding(new Insets(5, 10, 5, 10));
-                    text.setFill(Color.rgb(225, 225, 225));
-                    hBox.getChildren().add(textFlow);
-                    vBoxPane1.getChildren().add(hBox);
+                    if (fullMsg.toString().endsWith(".png") || fullMsg.toString().endsWith(".jpg") || fullMsg.toString().endsWith(".jpeg") || fullMsg.toString().endsWith(".gif")) {
+                        System.out.println(fullMsg);
+                        hBox.setAlignment(Pos.TOP_LEFT);
+                        hBox.setPadding(new Insets(5, 10, 5, 5));
+                        Text text = new Text(cmd + " ");
+                        text.setStyle("-fx-font-size: 15px");
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(String.valueOf(fullMsg));
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        TextFlow textFlow = new TextFlow(text, imageView);
+                        textFlow.setStyle("-fx-background-color: rgb(139,0,139);" + "-fx-background-radius: 15px");
+                        textFlow.setPadding(new Insets(5, 10, 5, 10));
+                        hBox.getChildren().add(textFlow);
+                        vBoxPane1.getChildren().add(hBox);
 
+                    } else {
+                        hBox.setAlignment(Pos.CENTER_LEFT);
+                        hBox.setPadding(new Insets(5, 10, 5, 5));
+                        Text text = new Text(msg);
+                        text.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
+                        TextFlow textFlow = new TextFlow(text);
+                        textFlow.setStyle("-fx-background-color: rgb(139,0,139);" + "-fx-background-radius: 15px");
+                        textFlow.setPadding(new Insets(5, 10, 5, 10));
+                        text.setFill(Color.rgb(225, 225, 225));
+                        hBox.getChildren().add(textFlow);
+                        vBoxPane1.getChildren().add(hBox);
+                    }
                 });
 
             }
@@ -131,7 +180,7 @@ public class ClientFormController extends Thread {
         send();
     }
 
-    public void send(){
+    public void send() {
         String msg = txtClient.getText();
         printWriter.println(userName + ": " + msg);
         HBox hBox = new HBox();
