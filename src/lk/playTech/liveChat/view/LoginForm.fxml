@@ -4,32 +4,53 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.net.URL?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.playTech.liveChat.controller.LoginFormController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="logScreen" stylesheets="@assets/styles/styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.playTech.liveChat.controller.LoginFormController">
    <children>
-      <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="205.0" layoutY="235.0" promptText="User Name">
+      <Pane layoutX="294.0" layoutY="27.0" prefHeight="346.0" prefWidth="286.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+         <children>
+            <JFXTextField fx:id="txtUserName" focusColor="#2e2581" labelFloat="true" layoutX="39.0" layoutY="210.0" promptText="User Name" unFocusColor="BLACK">
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="btnLogin" layoutX="102.0" layoutY="275.0" onAction="#loginOnAction" prefHeight="26.0" prefWidth="82.0" text="Login" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Cambria Bold" size="14.0" />
+               </font>
+               <stylesheets>
+                  <URL value="@assets/styles/styles.css" />
+               </stylesheets>
+            </JFXButton>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="65.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/Login.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label layoutX="84.0" layoutY="81.0" text="Live-Chat" textFill="WHITE">
          <font>
-            <Font name="Cambria Bold" size="18.0" />
+            <Font name="Cambria Bold" size="36.0" />
          </font>
-      </JFXTextField>
-      <JFXButton fx:id="btnLogin" layoutX="268.0" layoutY="317.0" onAction="#loginOnAction" prefHeight="26.0" prefWidth="82.0" text="Login" textFill="WHITE">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <font>
-            <Font name="Cambria Bold" size="14.0" />
-         </font>
-         <stylesheets>
-            <URL value="@assets/styles/styles.css" />
-         </stylesheets>
-      </JFXButton>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="231.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+      </Label>
+      <ImageView fitHeight="244.0" fitWidth="259.0" layoutX="19.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@assets/img/Login.png" />
+            <Image url="@assets/img/logScreen.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="88.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/img/logo.png" />
          </image>
       </ImageView>
    </children>

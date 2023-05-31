@@ -2,6 +2,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,6 +25,9 @@ public class Client1AppInitializer extends Application {
         Parent load = FXMLLoader.load(resource);
         Scene scene = new Scene(load);
         primaryStage.setTitle("Live - Chat");
+
+        Image image = new Image("/lk/playTech/liveChat/view/assets/img/logo.png");
+        primaryStage.getIcons().add(image);
 
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);

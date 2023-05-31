@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.playTech.liveChat.controller.ClientFormController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@assets/styles/styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.playTech.liveChat.controller.ClientFormController">
    <children>
-      <TextField fx:id="txtClient" layoutX="43.0" layoutY="351.0" prefHeight="26.0" prefWidth="406.0" />
+      <TextField fx:id="txtClient" layoutX="43.0" layoutY="345.0" onKeyPressed="#txtClientOnAction" prefHeight="35.0" prefWidth="460.0" style="-fx-border-radius: 20; -fx-background-radius: 20;" />
       <Label fx:id="lblUName" layoutX="109.0" layoutY="19.0" prefHeight="18.0" prefWidth="104.0">
          <font>
             <Font name="Cambria Bold" size="18.0" />
@@ -28,7 +28,7 @@
             <VBox fx:id="vBoxPane1" prefHeight="73.0" prefWidth="504.0" />
          </content>
       </ScrollPane>
-      <ImageView fx:id="imgGallery" fitHeight="60.0" fitWidth="30.0" layoutX="525.0" layoutY="350.0" onMouseClicked="#imgGalleryOnAction" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgGallery" fitHeight="60.0" fitWidth="30.0" layoutX="463.0" layoutY="348.0" onMouseClicked="#imgGalleryOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/img/gallery.png" />
          </image>
@@ -36,7 +36,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="imgEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="490.0" layoutY="350.0" onMouseClicked="#imgEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="427.0" layoutY="348.0" onMouseClicked="#imgEmojiOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/img/emoji.png" />
          </image>
@@ -44,7 +44,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="imgSend" cache="true" fitHeight="60.0" fitWidth="30.0" layoutX="460.0" layoutY="350.0" onMouseClicked="#imgSendOnAction" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgSend" cache="true" fitHeight="60.0" fitWidth="40.0" layoutX="510.0" layoutY="340.0" onMouseClicked="#imgSendOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/img/send.png" />
          </image>

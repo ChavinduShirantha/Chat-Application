@@ -1,12 +1,17 @@
-.button:hover
-{
+.button:hover {
     -fx-background-color: #0c336c;
     -fx-border-color: transparent;
 }
 
-.button
-{
+.button {
     -fx-background-color: #458FFF;
     -fx-border-color: transparent;
 }
 
+.background {
+    -fx-background-color: linear-gradient(to left,cornflowerblue,lightblue);
+}
+
+.logScreen{
+    -fx-background-color: linear-gradient(to left,blueviolet,darkmagenta);
+}

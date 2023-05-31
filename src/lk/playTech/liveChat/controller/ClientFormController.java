@@ -5,26 +5,21 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextFlow;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 
 import java.io.*;
-import java.net.MalformedURLException;
 import java.net.Socket;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
 
 
 import static lk.playTech.liveChat.controller.LoginFormController.userName;
@@ -114,7 +109,7 @@ public class ClientFormController extends Thread {
                     Text text = new Text(msg);
                     text.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
                     TextFlow textFlow = new TextFlow(text);
-                    textFlow.setStyle("-fx-background-color: rgb(180,45,166);" + "-fx-background-radius: 15px");
+                    textFlow.setStyle("-fx-background-color: rgb(139,0,139);" + "-fx-background-radius: 15px");
                     textFlow.setPadding(new Insets(5, 10, 5, 10));
                     text.setFill(Color.rgb(225, 225, 225));
                     hBox.getChildren().add(textFlow);
@@ -133,11 +128,15 @@ public class ClientFormController extends Thread {
     }
 
     public void imgSendOnAction(MouseEvent mouseEvent) {
+        send();
+    }
+
+    public void send(){
         String msg = txtClient.getText();
         printWriter.println(userName + ": " + msg);
         HBox hBox = new HBox();
         hBox.setAlignment(Pos.CENTER_RIGHT);
-        hBox.setPadding(new Insets(5, 5, 5, 10));
+        hBox.setPadding(new Insets(5, 20, 5, 10));
         Text text = new Text("Me : " + msg);
         text.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
         TextFlow textFlow = new TextFlow(text);
@@ -150,6 +149,12 @@ public class ClientFormController extends Thread {
         txtClient.setText("");
         if ((msg.equalsIgnoreCase("logout"))) {
             System.exit(0);
+        }
+    }
+
+    public void txtClientOnAction(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            send();
         }
     }
 }
