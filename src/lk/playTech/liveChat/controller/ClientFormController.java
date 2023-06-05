@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.layout.HBox;
@@ -37,6 +38,64 @@ import static lk.playTech.liveChat.controller.LoginFormController.userName;
  **/
 
 public class ClientFormController extends Thread {
+    @FXML
+    private ImageView imgsunglassEmoji;
+    @FXML
+    private ImageView imgthermometerEmoji;
+    @FXML
+    private ImageView imgHearteyeEmoji;
+    @FXML
+    private ImageView imgGhostEmoji;
+    @FXML
+    private ImageView imgexhaustEmoji;
+    @FXML
+    private ImageView imgmeltingEmoji;
+    @FXML
+    private ImageView imghideEmoji;
+    @FXML
+    private ImageView imgZancyEmoji;
+    @FXML
+    private ImageView imgsneezingEmoji;
+    @FXML
+    private ImageView imghandoverEmoji;
+    @FXML
+    private ImageView imgheadEmoji;
+    @FXML
+    private ImageView imgsalutingEmoji;
+    @FXML
+    private ImageView imgLikeEmoji;
+    @FXML
+    private ImageView imgmaskEmoji;
+    @FXML
+    private ImageView imgmonocoleEmoji;
+    @FXML
+    private ImageView imgCrossFingersEmoji;
+    @FXML
+    private ImageView imgcoldEmoji;
+    @FXML
+    private ImageView imgCelibrateEmoji;
+    @FXML
+    private ImageView imgClappingEmoji;
+    @FXML
+    private ImageView imgsleepingEmoji;
+    @FXML
+    private ImageView imgheartEmoji;
+    @FXML
+    private ImageView imgCryingEmoji;
+    @FXML
+    private ImageView imgCryingEmoji1;
+    @FXML
+    private ImageView imgLaughingEmoji1;
+    @FXML
+    private ImageView imgLaughingEmoji;
+    @FXML
+    private ImageView imgHappyWithTearsEmoji;
+    @FXML
+    private ImageView imgHappyEmoji;
+    @FXML
+    private ImageView imgAngryEmoji;
+    @FXML
+    private Pane emojiPane;
     @FXML
     private ImageView imgSend;
     @FXML
@@ -79,6 +138,7 @@ public class ClientFormController extends Thread {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        emojiPane.setVisible(false);
     }
 
 
@@ -122,6 +182,7 @@ public class ClientFormController extends Thread {
     }
 
     public void imgEmojiOnAction(MouseEvent mouseEvent) {
+        emojiPane.setVisible(true);
     }
 
     public void run() {
@@ -217,5 +278,145 @@ public class ClientFormController extends Thread {
         if (keyEvent.getCode() == KeyCode.ENTER) {
             send();
         }
+    }
+
+    public void imgHappyEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83D\uDE0A");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgAngryEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83D\uDE21");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgHappyWithTearsEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83D\uDE02");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgLaughingEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83E\uDD23");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgLaughingEmoji1OnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83D\uDE04");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgCryingEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83D\uDE22");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgCryingEmoji1OnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83D\uDE2D");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgsunglassEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83D\uDE0E");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgthermometerEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83E\uDD12");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgHearteyeEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83D\uDE0D");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgGhostEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83D\uDC7B");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgexhaustEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83D\uDE24");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgmeltingEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83E\uDD29");
+        emojiPane.setVisible(false);
+    }
+
+    public void imghideEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83D\uDE36");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgZanyEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83E\uDD2A");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgsneezingEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83E\uDD27");
+        emojiPane.setVisible(false);
+    }
+
+    public void imghandoverEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83E\uDD2D");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgheadEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83E\uDD2F");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgsalutingEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83D\uDC4B");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgLikeEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83D\uDC4D");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgmaskEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83D\uDE37");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgmonocoleEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83E\uDDD0");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgCrossFingersEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83E\uDD1E");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgcoldEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83E\uDD76");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgCelibrateEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83E\uDD73");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgClappingEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83D\uDC4F");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgsleepingEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83D\uDE34");
+        emojiPane.setVisible(false);
+    }
+
+    public void imgheartEmojiOnAction(MouseEvent mouseEvent) {
+        txtClient.appendText("\uD83D\uDC96");
+        emojiPane.setVisible(false);
     }
 }

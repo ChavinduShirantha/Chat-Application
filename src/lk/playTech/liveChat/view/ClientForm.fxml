@@ -7,6 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -52,5 +53,233 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
+      <Pane fx:id="emojiPane" layoutX="244.0" layoutY="220.0" prefHeight="124.0" prefWidth="214.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fx:id="imgHappyEmoji" fitHeight="60.0" fitWidth="30.0" onMouseClicked="#imgHappyEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/emoji.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgAngryEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="60.0" onMouseClicked="#imgAngryEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/emoji2.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgHappyWithTearsEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="30.0" onMouseClicked="#imgHappyWithTearsEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/emoji1.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgLaughingEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="90.0" onMouseClicked="#imgLaughingEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-laughing-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgLaughingEmoji1" fitHeight="60.0" fitWidth="30.0" layoutX="120.0" onMouseClicked="#imgLaughingEmoji1OnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-grinning-squinting-face-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgCryingEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="150.0" onMouseClicked="#imgCryingEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-crying-face-94.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgCryingEmoji1" fitHeight="60.0" fitWidth="30.0" layoutX="180.0" onMouseClicked="#imgCryingEmoji1OnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-loudly-crying-face-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgsunglassEmoji" fitHeight="60.0" fitWidth="30.0" layoutY="30.0" onMouseClicked="#imgsunglassEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-smiling-face-with-sunglasses-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgthermometerEmoji" fitHeight="60.0" fitWidth="30.0" layoutY="60.0" onMouseClicked="#imgthermometerEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-face-with-thermometer-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgHearteyeEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="120.0" layoutY="30.0" onMouseClicked="#imgHearteyeEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-smiling-face-with-heart-eyes-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgGhostEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="150.0" layoutY="90.0" onMouseClicked="#imgGhostEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-ghost-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgexhaustEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="150.0" layoutY="60.0" onMouseClicked="#imgexhaustEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-face-exhailing-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgmeltingEmoji" fitHeight="60.0" fitWidth="30.0" layoutY="90.0" onMouseClicked="#imgmeltingEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-star-struck-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imghideEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="180.0" layoutY="60.0" onMouseClicked="#imghideEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-face-without-mouth-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgZancyEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="150.0" layoutY="30.0" onMouseClicked="#imgZanyEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-zany-face-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgsneezingEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="180.0" layoutY="30.0" onMouseClicked="#imgsneezingEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-sneezing-face-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imghandoverEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="30.0" layoutY="30.0" onMouseClicked="#imghandoverEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-face-with-hand-over-mouth-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgheadEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="30.0" layoutY="60.0" onMouseClicked="#imgheadEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-face-with-head-bandage-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgsalutingEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="30.0" layoutY="90.0" onMouseClicked="#imgsalutingEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-waving-hand-emoji-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgLikeEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="60.0" layoutY="90.0" onMouseClicked="#imgLikeEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-like-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgmaskEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="60.0" layoutY="60.0" onMouseClicked="#imgmaskEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-face-with-medical-mask-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgmonocoleEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="60.0" layoutY="30.0" onMouseClicked="#imgmonocoleEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-face-with-monocle-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgCrossFingersEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="90.0" layoutY="90.0" onMouseClicked="#imgCrossFingersEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-crossed-fingers-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgcoldEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="90.0" layoutY="60.0" onMouseClicked="#imgcoldEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-cold-face-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgCelibrateEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="90.0" layoutY="30.0" onMouseClicked="#imgCelibrateEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-partying-face-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgClappingEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="120.0" layoutY="90.0" onMouseClicked="#imgClappingEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-clapping-hands-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgsleepingEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="120.0" layoutY="60.0" onMouseClicked="#imgsleepingEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-sleeping-face-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgheartEmoji" fitHeight="60.0" fitWidth="30.0" layoutX="180.0" layoutY="90.0" onMouseClicked="#imgheartEmojiOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-heart-96.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
