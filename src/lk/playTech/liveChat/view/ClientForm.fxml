@@ -13,7 +13,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@assets/styles/styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.playTech.liveChat.controller.ClientFormController">
    <children>
-      <TextField fx:id="txtClient" layoutX="43.0" layoutY="345.0" onKeyPressed="#txtClientOnAction" prefHeight="35.0" prefWidth="460.0" style="-fx-border-radius: 20; -fx-background-radius: 20;" />
+      <TextField fx:id="txtClient" layoutX="43.0" layoutY="345.0" onKeyPressed="#txtClientOnAction" prefHeight="35.0" prefWidth="460.0" promptText="Type Here ...." style="-fx-border-radius: 20; -fx-background-radius: 20;" />
       <Label fx:id="lblUName" layoutX="109.0" layoutY="19.0" prefHeight="18.0" prefWidth="104.0">
          <font>
             <Font name="Cambria Bold" size="18.0" />
